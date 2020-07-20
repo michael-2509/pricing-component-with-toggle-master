@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(240, 78%, 98%);
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body::before{
+    content: '';
+    background-image: url('./images/bg-top.svg');
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: -1;
+}
+
+
+body::after{
+    content: '';
+    background-image: url('./images/bg-bottom.svg');
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#content {
+    color: hsl(233, 13%, 49%);
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+#content h1{
+    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+#content > p{
+    color: hsl(234, 14%, 74%);
+    padding-bottom: 3rem;
+}
+
+#content label{
+    background-image: linear-gradient(to right,
+    hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+}
+
+#content label .ball{
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width:25px;
+    height: 25px;
+    transition: transform 0.4s ease;
+}
+
+#content input{
+    position:absolute;
+    left: -9999px;
+}
+
+#content input:checked + label .ball{
+    transform: translateX(30px);
+}
+
+#content .box{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#content .box-container{
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 .5rem;
+    padding: 1rem 2rem;
+    text-align: center;
+
+}
+
+#content .box-container p{
+    color:hsl(233, 13%, 49%);
+}
+
+#content .box-container .monthly{
+    color: hsl(232, 13%, 33%);
+    border-bottom: 0.1rem solid hsl(234, 14%, 74%);
+    font-size: 4rem;
+    margin: 0;
+    padding-bottom: 30px;
+    display: none;
+}
+
+
+#content .box-container .annually{
+    color: hsl(232, 13%, 33%);
+    border-bottom: 0.1rem solid hsl(234, 14%, 74%);
+    font-size: 4rem;
+    margin: 0;
+    padding-bottom: 30px;
+    
+}
+
+#content .ShowMonthly .box-container .monthly{
+    display: block;
+}
+
+#content .ShowMonthly .box-container .annually{
+    display: none;
+}
+
+#content .box-container ul{
+    padding: 0;
+    list-style-type: none;
+  
+    
+}
+
+#content .box-container ul li{
+    border-bottom: 0.1rem solid hsl(234, 14%, 74%);
+    padding-bottom: 20px;
+    margin-bottom: 1rem;
+    width: 18rem;
+}
+
+#content .box-container button{
+    background-image: linear-gradient(to right,
+    hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    padding: 12px 10px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    border-radius: 5px;
+    color:white;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    outline: none;
+    border-style: none   
+}
+
+#content .box-container button:hover{
+    background-image: none;
+    background-color: white;
+    color: hsl(233, 13%, 49%);
+    border: 1px solid hsl(233, 13%, 49%);
+    cursor: pointer;
+    outline: none;
+}
+
+
+#content .box .special-box{
+    background-image: linear-gradient(to right,
+    hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    padding: 12px 10px;
+    color: white;
+    transform: scale(1.15);
+}
+
+#content .box .special-box * {
+    transform: scale(0.95);
+}
+
+#content .box .special-box p{
+    color: white;
+}
+
+
+#content .box .special-box .monthly{
+    transform: scale(0.9);
+}
+
+#content .box .special-box .annually{
+    transform: scale(0.9);
+}
+
+#content .box .special-box button{
+ background-image:none;
+ background-color: white;
+
+ color: hsl(237, 63%, 64%);
+}
+
+#content .box .special-box button:hover{
+    background-image: linear-gradient(to right,
+    hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    color: #fff;
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+  
+}
+
+.attribution{
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 768px){
+    #content .box{
+        flex-direction: column;
+    }
+
+    #content .box .box-container{
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    #content .box .special-box{
+        transform: scale(1);
+     
+        padding: 1rem 2rem;
+    }
+
+    #content .box .special-box * {
+        transform: scale(1);
+    }
+}
